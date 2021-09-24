@@ -23,6 +23,14 @@ var LinkedList = function() {
   //CONTAINS
   list.contains = function(target) {
     var result = false;
+    if (list.head === null) {
+      return false;
+    }
+    if (list.head.value === target) {
+      return true;
+    } else if (list.tail.value === target) {
+      return true;
+    }
     var innerFunction = function(node) {
       if (node.value === target) {
         result = true;
@@ -36,7 +44,6 @@ var LinkedList = function() {
     innerFunction(list.head);
     return result;
   };
-
   return list;
 };
 
