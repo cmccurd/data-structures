@@ -8,8 +8,6 @@ var HashTable = function() {
 
 HashTable.prototype.insert = function(k, v) {
   var index = getIndexBelowMaxForKey(k, this._limit);
-  //if the index[0] === k
-  //replace index[1] with v
   if (Array.isArray(this._storage[index])) {
     for ( var i = 0; i < this._storage[index].length; i++) {
       if (this._storage[index][i][0] === k) {
@@ -59,6 +57,7 @@ HashTable.prototype.remove = function(k) {
 //Add a test case
 /*
  * Complexity: What is the time complexity of the above functions?
+    The functions only loop at specific indexes.
     Constant Amorization
  */
 
