@@ -37,4 +37,12 @@ describe('binarySearchTree', function() {
     binarySearchTree.depthFirstLog(func);
     expect(array).to.eql([5, 2, 3, 7]);
   });
+
+  it('should throw error when inserting duplicate value', function() {
+    expect(function () {
+      binarySearchTree.insert(5);
+    }).to.throw(TypeError, 'Can\'t do that');
+  });
+
 });
+
