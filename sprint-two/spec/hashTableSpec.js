@@ -73,4 +73,12 @@ describe('hashTable', function() {
     hashTable.remove('Mr.');
     expect(hashTable._limit).to.equal(8);
   });
+
+  it('should throw error when attempting to remove node that doesn\'t exist', function() {
+    hashTable.insert('Bob', 'Loblaw');
+    hashTable.insert('Bob', 'Barker');
+    expect(function () {
+      hashTable.remove('George');
+    }).to.throw(TypeError);
+  });
 });
