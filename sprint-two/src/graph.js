@@ -27,7 +27,6 @@ Graph.prototype.removeNode = function(node) {
   }
   delete this.storage[edgeName];
   delete this.storage[node];
-
 };
 
 // Returns a boolean indicating whether two specified nodes are connected.
@@ -67,5 +66,12 @@ Graph.prototype.forEachNode = function(cb) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+    .addNode constant time
+    .contain constant time
+    .removeNode constant amorization
+    .hasEdge constant time
+    .addEdge constant time
+    .removeEdge constant time
+    .forEachNode linear time
  */
 //
